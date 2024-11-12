@@ -8,6 +8,7 @@ const loginController = async (request, response) => {
     }
     const user_email = request.body.email
     const user_details = await userModel.findOne({ EmailId: user_email })
+    console.log(user_details)
     return response.status(200).json({ role: user_details.Role})
 }
 module.exports = { loginController }
